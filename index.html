@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>List Builder</title>
+    <link rel="stylesheet" href="./css/app.css" />
+</head>
+
+<body>
+
+    <main id="app" class="px-3">
+        <div class="container">
+            <div class="row">
+                <div class="col-12">
+                    <div class=" d-flex flex-column min-vh-100">
+                        <div class="px-3 mb-4 mt-3">
+                            <h1 class="mb-0">MMS Solutions</h1>
+                            <h3 class="text-black-50">Invoice Apps</h3>
+                        </div>
+                        <div class="bg-secondary-subtle p-3 my-4 d-print-none">
+                            <form action="" class="" id="newRecord">
+                                <div class="row">
+                                    <div class=" col-6 col-lg-4">
+                                        <div class="">
+                                            <label for="product" class="form-label">Select Product</label>
+                                            <select name="product" id="product" class="form-select" required>
+    
+                                            </select>
+                                        </div>
+                                    </div>
+                                    <div class="col-6 col-lg-4">
+                                        <div class="">
+                                            <label for="quantity" class="form-label">Quantity</label>
+                                            <input type="number" name="quantity" id="quantity" class="form-control"
+                                                required>
+    
+                                        </div>
+                                    </div>
+                                    <div class=" col-12 col-lg-4 align-self-end">
+                                        <button class="btn btn-primary w-100">Add Record</button>
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+    
+                        <div class="px-3 mb-4">
+                            <table class="table" id="records">
+                                <thead class="table-dark">
+                                    <tr>
+                                        <th>#</th>
+                                        <th class="text-start">product</th>
+                                        <th class="text-end">Price</th>
+                                        <th class="text-end">Quality</th>
+                                        <th class="text-end">Cost</th>
+                                    </tr>
+                                </thead>
+                                <tbody id="record-rows">
+                                    <tr class="empty-row">
+                                        <td class="text-center" colspan="5">There is no record</td>
+                                    </tr>
+                                   <!-- <tr class="record-row">
+                                        <td class=" ">1</td>
+                                        <td class="text-start record-product">Apple</td>
+                                        <td class="text-end record-price">1200</td>
+                                        <td class="text-end record-quantity">5</td>
+                                        <td class="text-end record-cost">6000</td>
+                                    </tr> -->
+                                 
+    
+                                </tbody>
+                                <tfoot class="table-primary">
+                                    <tr>
+                                        <td colspan="4" class="text-start">Total</td>
+                                        <td class="text-end records-total">0</td>
+                                    </tr>
+                                    <tr>
+                                        <td colspan="4" class="text-start">Tax</td>
+                                        <td class="text-end records-tax">5%</td>
+                                    </tr>
+                                    <tr>
+                                        <td colspan="4" class="text-start">Subtax</td>
+                                        <td class="text-end subTotal">0</td>
+                                    </tr>
+                                </tfoot>
+                            </table>
+                        </div>
+    
+                        <div class=" text-end mt-auto mb-3 d-print-none">
+                            <button class="btn btn-outline-primary" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasExample" aria-controls="offcanvasExample">Manage Inventory</button>
+                            <button onclick="print()" class="btn btn-primary">Print</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+       
+          
+          <div class="offcanvas offcanvas-end" data-bs-backdrop="static" tabindex="-1" tabindex="-1" id="offcanvasExample" aria-labelledby="offcanvasExampleLabel">
+            <div class="offcanvas-header">
+              <h5 class="offcanvas-title" id="offcanvasExampleLabel">Manage Inventory <br> <span class="text-black-50">Available Items</span> </h5>
+              <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+            </div>
+            <div class="offcanvas-body">
+              <div id="inventories">
+                <!-- <div class=" item-list border border-2 p-3 mb-3 d-flex justify-content-between">
+                    <p class="mb-0 item-name">Apple</p>
+                    <p class="mb-0 text-black-50 item-price">1200mmk</p>
+                  </div>
+                  <div class=" item-list border border-2 p-3 mb-3 d-flex justify-content-between">
+                    <p class="mb-0 item-name">Orange</p>
+                    <p class="mb-0 text-black-50 item-price">1300mmk</p>
+                  </div> -->
+              </div>
+
+              <div class="p-3 bg-secondary-subtle">
+                <form action="#" id="newItem">
+                <div class="mb-3">
+                    <label for="" class="form-label">New Item Name</label>
+                    <input type="text"  id="newItemName" class="form-control">
+                </div>
+
+                <div class="row g-3">
+                    <div class="col">
+                        <input type="number" id="newItemPrice" placeholder="Price" class="form-control">
+                    </div>
+                    <div class="col">
+                       <button class="btn btn-primary w-100">Add Item</button>
+                    </div>
+                </div>
+                </form>
+              </div>
+            
+            </div>
+          </div>
+    </main>
+
+    
+
+    <script src="./node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
+    <script src="./invoice.js"></script>
+</body>
+
+</html>
